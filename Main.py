@@ -37,13 +37,12 @@ while game_is_on:
         game_is_on = False
         score_b.game_over()
 
-    for body in snake.segments:
-        if body == snake.head:
-            pass
+    for body in snake.segments[1:]:
+        if snake.head.pos() == body.pos():
+            game_is_on = False
+            score_b.game_over()
         else:
-            if snake.head.pos() == body.pos():
-                game_is_on = False
-                score_b.game_over()
+            pass
 
 
 
